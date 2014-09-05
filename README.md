@@ -56,8 +56,8 @@ The following table shows all one letter shortcuts:
 
 The following symlinks are installed in case you miss the space. They work as expected:
 
-  sysds
-  syds
+    sysds
+    syds
 
 Complete mapping
 ----------------
