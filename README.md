@@ -1,15 +1,15 @@
-Shortcuts for systemd with aliases
-==================================
+Shell shortcuts for systemd with aliases
+========================================
 
 Tired of typing
 
-  systemc<TAB>
+    systemc<TAB>
 
 to do call `systemctl`?
 
 Don't like typing
 
-  systemd-cgl<TAB>
+    systemd-cgl<TAB>
 
 to get list cgroups processes?
 
@@ -33,8 +33,8 @@ people like it. I can always remove the symlink in the next major release.
 
 For now, the following two commands are equivalent:
 
-  sysd help
-  syd help
+    sysd help
+    syd help
 
 One letter shortcuts
 --------------------
@@ -46,6 +46,7 @@ that the one-letter space is small and it should not be blindly polluted.
 The following table shows all one letter shortcuts:
 
 | sysd shortcut | systemd binary |
+| ------------- | -------------- |
 | sysd s | systemctl |
 | sysd j | journalctl |
 | sysd h | hostnamectl |
@@ -60,6 +61,7 @@ Complete mapping
 ----------------
 
 | sysd command | systemd binary |
+| ------------ | -------------- |
 | sysd | *expands to the last command* |
 | sysd bootctl | bootctl |
 | sysd hostnamectl | hostnamectl |
@@ -89,6 +91,7 @@ As you can see the mapping is pretty straightforward, in addition to the
 one-to-one mapping the following aliases are available:
 
 | sysd command | systemd binary |
+| ------------ | -------------- |
 | sysd lscg | systemd-cgls |
 | sysd topcg | systemd-cgtop |
 
