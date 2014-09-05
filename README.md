@@ -1,6 +1,8 @@
 Shell shortcuts for systemd with aliases
 ========================================
 
+*Warning: This is just on a paper at the moment*
+
 Tired of typing
 
     systemc<TAB>
@@ -62,7 +64,6 @@ Complete mapping
 
 | sysd command | systemd binary |
 | ------------ | -------------- |
-| sysd | *expands to the last command* |
 | sysd bootctl | bootctl |
 | sysd hostnamectl | hostnamectl |
 | sysd journalctl | journalctl |
@@ -92,6 +93,8 @@ one-to-one mapping the following aliases are available:
 
 | sysd command | systemd binary |
 | ------------ | -------------- |
+| sysd | *expands to the last command* |
+| sysd help | shows manual page |
 | sysd lscg | systemd-cgls |
 | sysd topcg | systemd-cgtop |
 
