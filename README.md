@@ -105,6 +105,17 @@ one-to-one mapping the following aliases are available:
 | sysd lscg | systemd-cgls |
 | sysd topcg | systemd-cgtop |
 
+Legacy systems support
+----------------------
+
+When you need to switch between systemd-based and legacy (sysv init) systems,
+you probably appreciate that systemd-shortcuts works on these two. Some
+commands are mapped to their counterparts:
+
+| sysd command | legacy command |
+| ------------ | -------------- |
+| sysd systemctl | /sbin/service |
+
 Shell completion
 ----------------
 
