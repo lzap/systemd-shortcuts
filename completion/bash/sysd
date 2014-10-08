@@ -1,0 +1,67 @@
+# systemd-shortcuts                                       -*- shell-script -*-
+#
+# This file is part of systemd-shortcuts
+#
+# Copyright 2014 Lukas Zapletal
+#
+# systemd is free software; you can redistribute it and/or modify it
+# under the terms of the GNU Lesser General Public License as published by
+# the Free Software Foundation; either version 2.1 of the License, or
+# (at your option) any later version.
+#
+# systemd is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public License
+# along with systemd; If not, see <http://www.gnu.org/licenses/>.
+
+_sysd() {
+  local cur prev commands
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD-1]}"
+  commands="bootctl hostnamectl journalctl localectl loginctl machinectl
+  timedatectl analyze ask-password cat cgls cgtop coredumpctl delta
+  detect-virt inhibit machine-id-setup notify nspawn run stdio-bridge tmpfiles
+  tty-ask-password-agent lscg topcg"
+
+  # load completion if available (XXX there must be better way to do this)
+  [ -f /usr/share/bash-completion/completions/$prev ] &&
+    source /usr/share/bash-completion/completions/$prev
+
+  # hand over the hard work to someone else
+  case $prev in
+    sysd) COMPREPLY=( $(compgen -W "${commands}" -- ${cur}) ) ;;
+    s|systemctl) _systemctl &>/dev/null ;;
+    bootctl) _bootctl &>/dev/null ;;
+    h|hostnamectl) _hostnamectl &>/dev/null ;;
+    j|journalctl) _journalctl &>/dev/null ;;
+    localectl) _localectl &>/dev/null ;;
+    loginctl) _loginctl &>/dev/null ;;
+    machinectl) _machinectl &>/dev/null ;;
+    timedatectl) _timedatectl &>/dev/null ;;
+    analyze) _systemd_analyze &>/dev/null ;;
+    ask-password) _systemd_ask_password &>/dev/null ;;
+    cat) _systemd_cat  &>/dev/null ;;
+    cgls) _systemd_cgls &>/dev/null ;;
+    cgtop) _systemd_cgtop &>/dev/null ;;
+    coredumpctl) _systemd_coredumpctl &>/dev/null ;;
+    delta) _systemd_delta &>/dev/null ;;
+    detect-virt) _systemd_detect_virt &>/dev/null ;;
+    inhibit) _systemd_inhibit &>/dev/null ;;
+    machine-id-setup) _systemd_machine_id_setup &>/dev/null ;;
+    notify) _systemd_notify &>/dev/null ;;
+    n|nspawn) _systemd_nspawn &>/dev/null ;;
+    run) _systemd_run &>/dev/null ;;
+    stdio_bridge) _systemd_stdio_bridge &>/dev/null ;;
+    tmpfiles) _systemd_tmpfiles &>/dev/null ;;
+    tty-ask-password-agent) _systemd_tty_ask_password_agent &>/dev/null ;;
+    lscg) _systemd_cgls &>/dev/null ;;
+    topcg) _systemd_cgtop &>/dev/null ;;
+  esac
+}
+
+complete -F _sysd sysd
+
+# vim:sw=2:ts=2:et:ft=sh:

@@ -1,0 +1,39 @@
+#!/bin/bash
+
+die() {
+  echo "$1" 1>&2; exit 1
+}
+
+ACTION=$1
+shift
+
+case $ACTION in
+  help) man sysd ;;
+  ''|s|systemctl) systemctl $* ;;
+  bootctl) bootctl $* ;;
+  h|hostnamectl) hostnamectl $* ;;
+  j|journalctl) journalctl $* ;;
+  localectl) localectl $* ;;
+  loginctl) loginctl $* ;;
+  machinectl) machinectl $* ;;
+  timedatectl) timedatectl $* ;;
+  analyze) systemd-analyze $* ;;
+  ask-password) systemd-ask-password $* ;;
+  cat) systemd-cat $* ;;
+  cgls) systemd-cgls $* ;;
+  cgtop) systemd-cgtop $* ;;
+  coredumpctl) systemd-coredumpctl $* ;;
+  delta) systemd-delta $* ;;
+  detect-virt) systemd-detect-virt $* ;;
+  inhibit) systemd-inhibit $* ;;
+  machine-id-setup) systemd-machine-id-setup $* ;;
+  notify) systemd-notify $* ;;
+  n|nspawn) systemd-nspawn $* ;;
+  run) systemd-run $* ;;
+  stdio-bridge) systemd-stdio-bridge $* ;;
+  tmpfiles) systemd-tmpfiles $* ;;
+  tty-ask-password-agent) systemd-tty-ask-password-agent $* ;;
+  lscg) systemd-cgls $* ;;
+  topcg) systemd-cgtop $* ;;
+  *) die "$0: unrecognized option '$ACTION'" ;;
+esac
