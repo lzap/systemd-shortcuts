@@ -212,5 +212,11 @@ AUTHORS
 CONTRIBUTING
 ------------
 
+Source code, issues, patches:
+
 https://github.com/lzap/systemd-shortcuts
+
+Fedora and Red Hat builds:
+
+https://copr.fedoraproject.org/coprs/lzap/systemd-shortcuts/
 
