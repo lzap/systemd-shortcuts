@@ -3,7 +3,7 @@
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:     systemd-shortcuts
-Version:  0.0.1
+Version:  0.1.0
 Release:  1%{?dist}
 Summary:  Bash alias with code completion
 Group:    System Environment/Base
