@@ -58,6 +58,9 @@ to get list cgroups processes?
 
 You are on the right place.
 
+    yum -y install systemd-shortcuts
+    source /usr/share/bash-completion/sysd || echo "Or re-login"
+
 *Warning: This is just a POC and it can be thrown out or completely rewritten.
 This is not anything stable or finished. Send your comments (issues), or
 better, Pull Requests.*
@@ -180,6 +183,12 @@ In addition to the default `sysd`, systemd-shortcuts installs a symlink called
 `syd` which is even shorter, but perhaps harder to understand for newcomers or
 less appropriate. I think the letter saved is not worth it, but let's see how
 people like it.
+
+TODO LIST
+---------
+
+    * syd "shorter" shortcut is not yet implemented
+    * typo symlinks are not yet done too
 
 SEE ALSO
 --------

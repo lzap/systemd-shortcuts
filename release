@@ -4,5 +4,7 @@ GITHUB=lzap
 TAG=$(git describe --abbrev=0 --tags)
 
 mkdir -p rpmbuild/{BUILD,SRPM,RPM,SPECS,SOURCES}/
+rm -rf rpmbuild/RPMS/noarch/systemd-shortcuts-*.rpm
 wget -q -c -N -P rpmbuild/SOURCES --no-check-certificate https://github.com/lzap/${PROJECT}/archive/${TAG}.tar.gz
 rpmbuild --define "_topdir `pwd`/rpmbuild" -ba ${PROJECT}.spec
+sudo rpm -Uvh --force rpmbuild/RPMS/noarch/systemd-shortcuts-*.rpm

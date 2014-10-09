@@ -1,13 +1,15 @@
 %global owner lzap
 
 Name:     systemd-shortcuts
-Version:  0.1.1
+Version:  0.1.2
 Release:  1%{?dist}
 Summary:  Bash alias with code completion
 Group:    System Environment/Base
 License:  GPLv2+
 URL:      https://github.com/lzap/systemd-shortcuts
 Source0:  https://github.com/%{owner}/%{name}/archive/%{version}.tar.gz
+
+BuildArch: noarch
 
 Requires: systemd
 BuildRequires: asciidoc
@@ -33,6 +35,9 @@ make install PREFIX=%{buildroot}/usr
 %{_datadir}/man/man8/syd.8.gz
 
 %changelog
+* Thu Oct 09 2014 Lukas Zapletal <lzap+rpm@redhat.com> 0.1.2-1
+- Fixed architecture (noarch)
+
 * Thu Oct 09 2014 Lukas Zapletal <lzap+rpm@redhat.com> 0.1.1-1
 - Improved makefile and man pages
 
