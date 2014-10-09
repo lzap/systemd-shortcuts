@@ -1,7 +1,7 @@
 sysd(8)
 =======
-:man source:  systemd\-shortcuts
-:man manual:  Sysd
+:man source:  sysd
+:man manual:  systemd\-shortcuts
 
 NAME
 ----
@@ -94,6 +94,9 @@ The following table shows all one letter shortcuts:
 | sysd h        | hostnamectl    |
 | sysd n        | systemd-nspawn |
 
+TYPO SYMLINKS
+-------------
+
 The following symlinks are installed in case you miss the space. They work as
 expected:
 
@@ -180,6 +183,8 @@ people like it.
 
 SEE ALSO
 --------
+
+*systemd-shortcuts(8)*, *sysd*(8), *syd*(8)
 
 *systemctl*(1), *bootctl*(1), *hostnamectl*(1), *journalctl*(1),
 *localectl*(1), *loginctl*(1), *machinectl*(1), *timedatectl*(1),

@@ -1,1 +1,3 @@
 rpmbuild/
+*.8
+*.8.gz
