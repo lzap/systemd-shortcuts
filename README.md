@@ -170,7 +170,16 @@ commands are mapped to their counterparts:
 SHELL COMPLETION
 ----------------
 
-This command comes with bash completion. There is no zsh completion support yet.
+This command comes with bash completion. It loads systemd shell completion
+when possible, so this works:
+
+    sysd jo<TAB>
+    sysd journalctl
+    sysd journalctl SY<TAB>
+    sysd journalctl SYSLOG_<TAB>
+    SYSLOG_FACILITY=    SYSLOG_IDENTIFIER=  SYSLOG_PID
+
+*There is no zsh completion support yet.*
 
 OPTIONS
 -------
