@@ -1,3 +1,4 @@
 rpmbuild/
 *.8
 *.8.gz
+*.8.asciidoc

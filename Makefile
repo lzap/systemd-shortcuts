@@ -4,8 +4,12 @@ DATADIR = $(PREFIX)/share
  
 all: sysd systemd-shortcuts.8.gz sysd.8.gz syd.8.gz
 
-systemd-shortcuts.8.gz:
-	a2x --verbose -d manpage -f manpage README.md
+systemd-shortcuts.8.asciidoc:
+	cat systemd-shortcuts.asciidoc.in > $@
+	sed -n '/NAME/,$$p' README.md >> $@
+
+systemd-shortcuts.8.gz: systemd-shortcuts.8.asciidoc
+	a2x --verbose -d manpage -f manpage $<
 	gzip -9 systemd-shortcuts.8
 
 sysd.8.gz:
@@ -25,7 +29,7 @@ install: all
 	install -Dm644 syd.8.gz $(DATADIR)/man/man8/syd.8.gz
  
 clean:
-	-rm -f *.8
+	-rm -f *.8 *.8.gz *.asciidoc
  
 distclean: clean
  

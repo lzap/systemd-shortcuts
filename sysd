@@ -35,7 +35,7 @@ run_systemctl() {
 
 case $ACTION in
   help) man sysd ;;
-  ''|s|systemctl) run_systemctl $* ;;
+  s|systemctl) run_systemctl $* ;;
   bootctl) bootctl $* ;;
   h|hostnamectl) hostnamectl $* ;;
   j|journalctl) journalctl $* ;;

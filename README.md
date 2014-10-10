@@ -1,7 +1,42 @@
-sysd(8)
-=======
-:man source:  sysd
-:man manual:  systemd\-shortcuts
+systemd-shortcuts
+=================
+
+Tired of typing
+
+    sys<TAB><TAB><TAB>
+    systemc<TAB>
+
+to do call `systemctl`?
+
+Don't like typing
+
+    systemd-cgl<TAB>
+
+to get list cgroups processes?
+
+You are on the right place.
+
+    yum -y install systemd-shortcuts
+    source /usr/share/bash-completion/sysd || echo "Or re-login"
+    sysd s restart sshd
+    sysd h status
+
+Other distributions:
+
+    make install
+    source /usr/local/share/bash-completion/sysd
+
+*Warning: This is just a POC and it can be thrown out or completely rewritten.
+This is not anything stable or finished. Send your comments (issues), or
+better, Pull Requests.*
+
+Download Fedora and RHEL builds at:
+
+https://copr.fedoraproject.org/coprs/lzap/systemd-shortcuts/
+
+Source code, issues, patches at:
+
+https://github.com/lzap/systemd-shortcuts
 
 NAME
 ----
@@ -41,30 +76,6 @@ SYNOPSIS
     sysd tty-ask-password-agent
     sysd help
 
-INTRODUCTION
-------------
-
-Tired of typing
-
-    systemc<TAB>
-
-to do call `systemctl`?
-
-Don't like typing
-
-    systemd-cgl<TAB>
-
-to get list cgroups processes?
-
-You are on the right place.
-
-    yum -y install systemd-shortcuts
-    source /usr/share/bash-completion/sysd || echo "Or re-login"
-
-*Warning: This is just a POC and it can be thrown out or completely rewritten.
-This is not anything stable or finished. Send your comments (issues), or
-better, Pull Requests.*
-
 DESCRIPTION
 -----------
 
@@ -74,7 +85,7 @@ provided as second option. There are several one-letter shortcuts available
 
 Some commands are equal:
 
-    sysd systemctl = sysd s = sysd
+    sysd systemctl = sysd s
     sysd journalctl = sysd j
     sysd hostnamectl = sysd h
     sysd systemd-nspawn = sysd n
@@ -141,7 +152,6 @@ one-to-one mapping the following aliases are available:
 
 | sysd command | systemd binary                |
 | ------------ | --------------                |
-| sysd         | *the same effect as 'sysd s'* |
 | sysd help    | shows manual page             |
 | sysd lscg    | systemd-cgls                  |
 | sysd topcg   | systemd-cgtop                 |
@@ -187,6 +197,7 @@ people like it.
 TODO LIST
 ---------
 
+    * "sysd" without any command to have systemctl meaning
     * syd "shorter" shortcut is not yet implemented
     * typo symlinks are not yet done too
 
