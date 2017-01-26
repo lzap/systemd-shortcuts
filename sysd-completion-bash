@@ -22,7 +22,7 @@ _sysd() {
   cur="${COMP_WORDS[COMP_CWORD]}"
   prev="${COMP_WORDS[COMP_CWORD-1]}"
   commands="bootctl hostnamectl journalctl localectl loginctl machinectl
-  timedatectl analyze ask-password cat cgls cgtop coredumpctl delta
+  systemctl timedatectl analyze ask-password cat cgls cgtop coredumpctl delta
   detect-virt inhibit machine-id-setup notify nspawn run stdio-bridge tmpfiles
   tty-ask-password-agent lscg topcg"
 
