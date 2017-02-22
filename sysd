@@ -25,17 +25,9 @@ die() {
 ACTION=$1
 shift
 
-run_systemctl() {
-  if [ -x /usr/bin/systemctl ]; then
-    systemctl $*
-  else
-    /usr/sbin/service $2 $1
-  fi
-}
-
 case $ACTION in
   help) man sysd ;;
-  s|systemctl) run_systemctl $* ;;
+  s|systemctl) systemctl $* ;;
   bootctl) bootctl $* ;;
   h|hostnamectl) hostnamectl $* ;;
   j|journalctl) journalctl $* ;;
