@@ -16,19 +16,15 @@ to get list cgroups processes?
 
 You are on the right place.
 
+    dnf copr enable lzap/systemd-shortcuts
     yum -y install systemd-shortcuts
-    source /usr/share/bash-completion/sysd || echo "Or re-login"
-    sysd s restart sshd
-    sysd h status
+    source /usr/share/bash-completion/sysd
+    sysd s status sshd
 
 Other distributions:
 
     make install
     source /usr/local/share/bash-completion/sysd
-
-*Warning: This is just a POC and it can be thrown out or completely rewritten.
-This is not anything stable or finished. Send your comments (issues), or
-better, Pull Requests.*
 
 Download Fedora and RHEL builds at:
 
